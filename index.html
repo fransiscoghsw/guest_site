@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>Kembar Bersaudara Group Official Website</title>
+        <meta
+            name="description"
+            content="#KecilKayaManfaat — Indonesia's first quail farm startup, Bogor ID. 🐤 Peternakan Breeding dan Laying Quail Jawa Barat."
+        />
+
+        <!-- Preload gambar hero & aset berat agar tidak patah-patah saat render -->
+        <!-- Ganti path di bawah dengan hash yang dihasilkan Vite setelah build -->
+        <!-- Cara cari hash: jalankan `npm run build`, lalu lihat folder dist/assets/ -->
+        <!-- <link rel="preload" as="image" href="/assets/HomePage-Hero-[hash].jpeg" /> -->
+        <!-- <link rel="preload" as="image" href="/assets/telur-telur-puyuh-[hash].jpg" /> -->
+
+        <!-- DNS prefetch untuk domain API / CDN yang sering dipakai -->
+        <link rel="dns-prefetch" href="https://api.sukaquail.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+
+        <!-- Open Graph -->
+        <meta
+            property="og:title"
+            content="Kembar Bersaudara Group Official Website"
+        />
+        <meta
+            property="og:description"
+            content="#KecilKayaManfaat — Indonesia's first quail farm startup, Bogor ID. 🐤 Peternakan Breeding dan Laying Quail Jawa Barat."
+        />
+        <meta property="og:url" content="https://www.sukaquail.com" />
+        <meta property="og:type" content="website" />
+
+        <!-- Schema.org JSON-LD -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "name": "Kembar Bersaudara Group",
+                "url": "https://www.sukaquail.com",
+                "logo": "https://www.sukaquail.com/assets/Logo%20Berwarna-DI7ISFa0.jpg",
+                "description": "#KecilKayaManfaat — Indonesia's first quail farm startup, Bogor ID. 🐤 Peternakan Breeding dan Laying Quail Jawa Barat.",
+                "address": {
+                    "@type": "PostalAddress",
+                    "addressLocality": "Bogor",
+                    "addressRegion": "Jawa Barat",
+                    "addressCountry": "ID"
+                },
+                "sameAs": ["https://www.instagram.com/sukaquail"]
+            }
+        </script>
+
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="48x48"
+            href="src/assets/images/Logo.png"
+        />
+        <link rel="apple-touch-icon" href="src/assets/images/Logo.png" />
+
+        <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-YLVG19PK38"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
+
+            gtag("config", "G-YLVG19PK38");
+        </script>
+        <!-- Fonts: preconnect sekali, load semua family dalam 1 request HTTP -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Inter:wght@400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Poppins:wght@300;400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body class="font-poppins">
+        <div id="root"></div>
+        <script type="module" src="/src/index.jsx"></script>
+    </body>
+</html>

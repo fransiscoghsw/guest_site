@@ -1,0 +1,175 @@
+/* Article content styling to match admin-side */
+.article-content-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.article-content {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #334155; /* text-slate-800 equivalent */
+}
+
+/* Paragraph styling */
+.article-content p {
+  margin-bottom: 1rem !important;
+  line-height: 1.7 !important;
+}
+
+.article-content p:last-child {
+  margin-bottom: 0 !important;
+}
+
+.article-content p:empty {
+  margin-bottom: 1rem !important;
+  min-height: 1em !important;
+}
+
+/* List styling */
+.article-content ul {
+  margin: 1rem 0 !important;
+  padding-left: 2rem !important;
+  list-style-type: disc !important;
+}
+
+.article-content ol {
+  margin: 1rem 0 !important;
+  padding-left: 2rem !important;
+  list-style-type: decimal !important;
+}
+
+.article-content li {
+  display: list-item !important;
+  margin-bottom: 0.5rem !important;
+  padding-left: 0.25rem !important;
+  line-height: 1.7 !important;
+}
+
+/* Nested lists */
+.article-content ul ul,
+.article-content ol ol,
+.article-content ul ol,
+.article-content ol ul {
+  margin: 0.5rem 0 !important;
+}
+
+/* Headings */
+.article-content h1,
+.article-content h2,
+.article-content h3,
+.article-content h4,
+.article-content h5,
+.article-content h6 {
+  margin: 1.5rem 0 1rem 0 !important;
+  font-weight: bold !important;
+  line-height: 1.4 !important;
+}
+
+.article-content h1 {
+  font-size: 2rem !important;
+}
+.article-content h2 {
+  font-size: 1.75rem !important;
+}
+.article-content h3 {
+  font-size: 1.5rem !important;
+}
+.article-content h4 {
+  font-size: 1.25rem !important;
+}
+.article-content h5 {
+  font-size: 1.125rem !important;
+}
+.article-content h6 {
+  font-size: 1rem !important;
+}
+
+/* Links */
+.article-content a {
+  color: #3b82f6 !important;
+  text-decoration: underline !important;
+}
+
+.article-content a:hover {
+  color: #1d4ed8 !important;
+}
+
+/* Strong/Bold text */
+.article-content strong,
+.article-content b {
+  font-weight: bold !important;
+}
+
+/* Italic text */
+.article-content em,
+.article-content i {
+  font-style: italic !important;
+}
+
+/* Blockquotes */
+.article-content blockquote {
+  margin: 1rem 0 !important;
+  padding: 1rem !important;
+  border-left: 4px solid #e2e8f0 !important;
+  background-color: #f8fafc !important;
+  font-style: italic !important;
+}
+
+/* Code blocks */
+.article-content pre {
+  margin: 1rem 0 !important;
+  padding: 1rem !important;
+  background-color: #f1f5f9 !important;
+  border-radius: 0.375rem !important;
+  overflow-x: auto !important;
+}
+
+.article-content code {
+  background-color: #f1f5f9 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+  font-family: monospace !important;
+}
+
+/* Images */
+.article-content img {
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 1rem 0 !important;
+  border-radius: 0.375rem !important;
+}
+
+/* Tables */
+.article-content table {
+  width: 100% !important;
+  margin: 1rem 0 !important;
+  border-collapse: collapse !important;
+}
+
+.article-content th,
+.article-content td {
+  padding: 0.75rem !important;
+  border: 1px solid #e2e8f0 !important;
+  text-align: left !important;
+}
+
+.article-content th {
+  background-color: #f8fafc !important;
+  font-weight: bold !important;
+}
+
+/* Horizontal rules */
+.article-content hr {
+  margin: 2rem 0 !important;
+  border: none !important;
+  border-top: 1px solid #e2e8f0 !important;
+}
+
+/* Ensure consistent spacing */
+.article-content > *:first-child {
+  margin-top: 0 !important;
+}
+
+.article-content > *:last-child {
+  margin-bottom: 0 !important;
+}
