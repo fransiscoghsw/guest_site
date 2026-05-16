@@ -1,5 +1,3 @@
-import TentangKami from "../../assets/images/jumbotron-aboutus.png";
-
 const JumbotronAbout = (props) => {
     const { abouts } = props;
 

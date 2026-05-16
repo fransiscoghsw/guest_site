@@ -1,11 +1,10 @@
-import { Suspense, lazy, useState, useEffect, useMemo } from "react";
+import { Suspense, lazy, useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 import GuestLayouts from "../../layouts/GuestLayouts";
 import LoadingPage from "../../components/LoadingPage";
 import WelcomePage from "../../components/WelcomePage";
 import ErrorPage from "../ErrorPage";
-import { getArticles } from "../../services/article.service";
 import { getDashboardFrontpage } from "../../services/dashboard-frontpage.service";
 import { getAllProduct } from "../../services/product.service";
 import { getNilaiPerusahaan } from "../../services/nilaiperusahaan.service";
@@ -16,8 +15,6 @@ import ProductSection from "../../components/guest/ProductSection";
 import FaqList from "../../components/guest/FaqList";
 import BrandPartnerCarousel from "../../components/BrandPartnerCarousel";
 import PartnerCarousel from "../../components/PartnerCarousel";
-// Lazy load for ArticleList component
-const ArticleList = lazy(() => import("../../components/common/ArticleList"));
 
 const Dashboard = () => {
     const [showWelcome, setShowWelcome] = useState(false);
@@ -49,15 +46,7 @@ const Dashboard = () => {
         setShowWelcome(false);
         localStorage.setItem("hasVisited", "true");
     };
-    const {
-        data: articlesData,
-        isLoading: loadingArtikel,
-        error: errorArtikel,
-    } = useQuery({
-        queryKey: ["artikel"],
-        queryFn: () => getArticles(),
-        staleTime: 1000 * 60 * 5,
-    });
+    // Artikel tidak dipakai di halaman ini; hapus query untuk mencegah error
 
     const {
         data: dashboardData,
@@ -106,35 +95,7 @@ const Dashboard = () => {
         refetchOnWindowFocus: false,
     });
 
-    // Sort articles by date (newest first) and limit to 4
-    const articles = useMemo(() => {
-        if (!Array.isArray(articlesData)) return [];
-
-        const parseDate = (dateString) => {
-            if (!dateString) return new Date(0);
-
-            let date = new Date(dateString);
-
-            if (isNaN(date.getTime())) {
-                const dateMatch = dateString.match(/(\d{4})-(\d{2})-(\d{2})/);
-                if (dateMatch) {
-                    date = new Date(dateMatch[0]);
-                } else {
-                    date = new Date(Date.parse(dateString));
-                }
-            }
-
-            return isNaN(date.getTime()) ? new Date(0) : date;
-        };
-
-        return [...articlesData]
-            .sort((a, b) => {
-                const dateA = parseDate(a.tanggal);
-                const dateB = parseDate(b.tanggal);
-                return dateB.getTime() - dateA.getTime();
-            })
-            .slice(0, 6); // Limit to 4 articles for dashboard
-    }, [articlesData]);
+    // Tidak ada pemrosesan artikel di dashboard saat ini
 
     // --- Styling helpers for consistent, modern look ---
     const containerClass = "max-w-6xl mx-auto px-4 sm:px-6";
@@ -143,15 +104,6 @@ const Dashboard = () => {
     const sectionHeadingClass = "text-3xl sm:text-4xl font-extrabold";
     const cardClass =
         "rounded-2xl bg-white p-6 shadow-lg border border-gray-100";
-
-    // Handle loading
-    if (loadingArtikel) {
-        return <LoadingPage />;
-    }
-
-    if (errorArtikel) {
-        return <ErrorPage />;
-    }
 
     const FloatingContactSales = () => {
         const [isOpen, setIsOpen] = useState(false);

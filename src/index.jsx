@@ -13,7 +13,6 @@ import Dashboard from "./pages/guest/Dashboard";
 import About from "./pages/guest/About";
 import ErrorPage from "./pages/ErrorPage";
 import Founder from "./pages/guest/About/Founder";
-import FarmLocation from "./pages/guest/About/FarmLocation";
 import Produk from "./pages/guest/Produk";
 import Kontak from "./pages/guest/Kontak";
 
@@ -38,18 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/profil",
-                // Rute untuk '/tentang-kami' itu sendiri
                 element: <About />,
-            },
-            {
-                // Rute untuk '/tentang-kami/pendiri'
-                path: "/tentang-kami/pendiri",
-                element: <Founder />,
-            },
-            {
-                // Rute untuk '/tentang-kami/lokasi-peternakan'
-                path: "/tentang-kami/lokasi-peternakan",
-                element: <FarmLocation />,
             },
             {
                 path: "/kontak",
