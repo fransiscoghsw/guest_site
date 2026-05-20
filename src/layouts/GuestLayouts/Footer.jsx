@@ -62,12 +62,18 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
                     {/* LEFT */}
                     <div className="space-y-5">
-                        <img src={Logo} alt="logo" className="h-10 lg:h-12" />
+                        <div className="inline-block rounded-full bg-white p-0.1">
+                            <img
+                                src={Logo}
+                                alt="logo"
+                                className="h-10 lg:h-12"
+                            />
+                        </div>
 
                         <p className="text-sm text-white/70 leading-relaxed max-w-sm">
-                            PT Kembar Bersaudara Group — perusahaan yang
-                            bergerak di bidang produk berkualitas dengan standar
-                            modern dan higienis.
+                            PT KEMBAR MEDIKA SAFETY — perusahaan yang bergerak
+                            di bidang produk berkualitas dengan standar modern
+                            dan higienis.
                         </p>
 
                         <div className="space-y-3 text-white/70 text-sm">
@@ -117,10 +123,10 @@ const Footer = () => {
                         </h4>
 
                         <a
-                            href="mailto:kembarbersaudaragroup.pt@gmail.com"
+                            href="mailto:kembarmedikasafety.pt@gmail.com"
                             className="text-sm text-white/70 hover:text-[#F8AD44] transition break-all"
                         >
-                            kembarbersaudaragroup.pt@gmail.com
+                            kembarmedikasafety.pt@gmail.com
                         </a>
 
                         <div className="flex gap-3 md:justify-end pt-2">
@@ -146,7 +152,7 @@ const Footer = () => {
                 {/* BOTTOM */}
                 <div className="mt-12 pt-6 border-t border-white/10 text-center">
                     <p className="text-xs text-white/50">
-                        © 2026 PT Kembar Bersaudara Group. All Rights Reserved.
+                        © 2026 PT KEMBAR MEDIKA SAFETY. All Rights Reserved.
                     </p>
                 </div>
             </div>

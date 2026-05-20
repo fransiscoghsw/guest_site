@@ -18,8 +18,8 @@ const GuestLayouts = ({
             <Helmet>
                 <title>
                     {pageTitle
-                        ? `${pageTitle} | Kembar Bersaudara Group`
-                        : `Kembar Bersaudara Group`}
+                        ? `${pageTitle} | KEMBAR MEDIKA SAFETY`
+                        : `KEMBAR MEDIKA SAFETY`}
                 </title>
             </Helmet>
 

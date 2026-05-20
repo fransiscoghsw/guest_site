@@ -15,13 +15,15 @@ const Navbar = () => {
                 {/* Logo */}
                 <div className="flex items-center space-x-3">
                     <NavLink to="/" className="flex items-center space-x-3">
-                        <img
-                            src={LogoSQI}
-                            className="h-10 sm:h-12 lg:h-14"
-                            alt="Logo"
-                        />
+                        <div className="inline-block rounded-full bg-white p-0.1">
+                            <img
+                                src={LogoSQI}
+                                className="h-10 sm:h-12 lg:h-14"
+                                alt="Logo"
+                            />
+                        </div>
                         <span className="text-white font-bold text-lg sm:text-xl">
-                            PT Kembar Bersaudara
+                            PT KEMBAR MEDIKA SAFETY
                         </span>
                     </NavLink>
                 </div>

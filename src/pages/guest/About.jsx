@@ -18,7 +18,7 @@ const About = () => {
     const aboutTitle = aboutData?.judul || "Profil Perusahaan";
     const aboutDescription =
         aboutData?.deskripsi ||
-        "PT. Kembar Bersaudara Group is a distributor and supplier of industrial agricultural machinery, household appliances, wholesalers of computers and computer equipment, and more.";
+        "PT. Kembar Medika Safetys is a distributor and supplier of industrial agricultural machinery, household appliances, wholesalers of computers and computer equipment, and more.";
 
     return (
         <GuestLayouts pageTitle="Profil Perusahaan">
