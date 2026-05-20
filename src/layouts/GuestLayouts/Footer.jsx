@@ -65,7 +65,7 @@ const Footer = () => {
                         <img src={Logo} alt="logo" className="h-10 lg:h-12" />
 
                         <p className="text-sm text-white/70 leading-relaxed max-w-sm">
-                            PT Kembar Bersaudara Group — perusahaan yang
+                            PT KEMBAR MEDIKA SAFETY — perusahaan yang
                             bergerak di bidang produk berkualitas dengan standar
                             modern dan higienis.
                         </p>

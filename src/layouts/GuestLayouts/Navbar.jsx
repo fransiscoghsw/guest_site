@@ -21,7 +21,7 @@ const Navbar = () => {
                             alt="Logo"
                         />
                         <span className="text-white font-bold text-lg sm:text-xl">
-                            PT Kembar Bersaudara
+                            PT KEMBAR MEDIKA SAFETY
                         </span>
                     </NavLink>
                 </div>
