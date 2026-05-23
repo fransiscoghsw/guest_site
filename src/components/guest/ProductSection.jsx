@@ -4,8 +4,8 @@ import ProductCard from "./ProductCard";
 import { useRef, useEffect, useState } from "react";
 
 const ProductSection = ({
-    title = "Produk Kami",
-    subtitle = "Berbagai jenis produk berkualitas yang kami produksi",
+    title = "Our Products",
+    subtitle = "Various high-quality products we produce",
     products = [],
 }) => {
     const sliderRef = useRef(null);
@@ -82,10 +82,10 @@ const ProductSection = ({
                     </div>
 
                     <a
-                        href="/produk"
+                        href="/products"
                         className="hidden md:inline-flex items-center gap-2 bg-[#F8AD44] hover:bg-[#f5a028] text-black font-semibold px-6 py-3 rounded-xl shadow-lg transition"
                     >
-                        Lihat semua produk
+                        See All Products
                     </a>
                 </div>
 
@@ -165,7 +165,7 @@ const ProductSection = ({
                     </>
                 ) : (
                     <div className="text-white text-center py-20">
-                        Belum ada produk
+                        No products available
                     </div>
                 )}
             </div>

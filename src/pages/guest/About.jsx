@@ -15,13 +15,13 @@ const About = () => {
         refetchOnWindowFocus: false,
     });
 
-    const aboutTitle = aboutData?.judul || "Profil Perusahaan";
+    const aboutTitle = aboutData?.judul || "Company Profile";
     const aboutDescription =
         aboutData?.deskripsi ||
         "PT. Kembar Medika Safetys is a distributor and supplier of industrial agricultural machinery, household appliances, wholesalers of computers and computer equipment, and more.";
 
     return (
-        <GuestLayouts pageTitle="Profil Perusahaan">
+        <GuestLayouts pageTitle="Company Profile">
             {/* HERO / PROFILE INTRO */}
             <section className="relative overflow-hidden bg-gradient-to-r from-[#000080] via-[#1f3e8f] to-[#000080] py-20">
                 <div className="absolute -top-20 -left-20 w-72 h-72 bg-cyan-400/20 blur-3xl rounded-full" />
@@ -29,12 +29,12 @@ const About = () => {
 
                 <div className="relative max-w-6xl mx-auto text-center px-4">
                     <h1 className="mt-6 text-4xl sm:text-5xl font-bold text-white">
-                        Profil Perusahaan
+                        Company Profile
                     </h1>
                 </div>
             </section>
 
-            {/* PROFIL PERUSAHAAN DETAIL */}
+            {/* COMPANY PROFILE DETAIL */}
             <section className="relative bg-gradient-to-b from-slate-50 via-white to-slate-50 py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="relative rounded-[36px] bg-white/90 backdrop-blur-xl border border-slate-200 shadow-[0_30px_90px_rgba(15,23,42,0.08)] p-8 sm:p-12 lg:p-16 overflow-hidden">

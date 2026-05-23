@@ -111,9 +111,9 @@ const Dashboard = () => {
         const [modalStep, setModalStep] = useState("options"); // 'options' or 'template'
 
         // --- Detail WhatsApp ---
-        const waNumber = "6281110101227";
+        const waNumber = "6282194944632";
         const waTemplateMessage =
-            "Halo, saya tertarik dengan produk Suka Quail. Bisa tolong berikan informasi lebih lanjut?";
+            "Halo, saya tertarik dengan produk Medika Safety. Bisa tolong berikan informasi lebih lanjut?";
         const encodedMessage = encodeURIComponent(waTemplateMessage);
         const waLink = `https://wa.me/${waNumber}?text=${encodedMessage}`;
 
@@ -316,14 +316,14 @@ const Dashboard = () => {
                                                     className="mb-6 text-center"
                                                 >
                                                     <p className="text-gray-700 text-base font-medium mb-2">
-                                                        🎯 Tertarik dengan
-                                                        produk kami?
+                                                        🎯 Interested in our
+                                                        products?
                                                     </p>
                                                     <p className="text-gray-500 text-sm">
-                                                        Hubungi kontak di bawah
-                                                        untuk informasi lebih
-                                                        lanjut dan penawaran
-                                                        terbaik!
+                                                        Contact the details
+                                                        below for more
+                                                        information and the best
+                                                        offers!
                                                     </p>
                                                 </motion.div>
 
@@ -525,7 +525,7 @@ const Dashboard = () => {
                                     {/* Buttons */}
                                     <div className="flex flex-wrap items-center gap-4 mt-10">
                                         <Link
-                                            to={"/tentang-kami"}
+                                            to={"/about"}
                                             className="
                             inline-flex
                             items-center
@@ -546,7 +546,7 @@ const Dashboard = () => {
                             hover:-translate-y-1
                         "
                                         >
-                                            Lebih lanjut
+                                            Learn More
                                             <svg
                                                 xmlns="http://www.w3.org/2000/svg"
                                                 className="h-5 w-5"
@@ -562,7 +562,7 @@ const Dashboard = () => {
                                         </Link>
 
                                         <Link
-                                            to={"/kontak"}
+                                            to={"/contact"}
                                             className="
                             inline-flex
                             items-center
@@ -645,9 +645,9 @@ const Dashboard = () => {
                                 </h2>
 
                                 <p className="mt-5 max-w-2xl mx-auto text-slate-600 text-base lg:text-lg leading-relaxed">
-                                    Nilai perusahaan yang menjadi fondasi dalam
-                                    memberikan layanan profesional, terpercaya,
-                                    dan berkualitas.
+                                    Company values that serve as the foundation
+                                    for delivering professional, trusted, and
+                                    high-quality services.
                                 </p>
                             </div>
 
@@ -836,24 +836,24 @@ const Dashboard = () => {
                             <div className="mb-10 flex flex-col lg:flex-row lg:justify-between lg:items-end gap-6">
                                 <div>
                                     <span className="inline-block px-4 py-1 text-xs bg-white/10 border border-white/20 text-white rounded-full mb-3">
-                                        Produk Kami
+                                        Our Products
                                     </span>
 
                                     <h2 className="text-white text-3xl lg:text-5xl font-bold">
-                                        Produk Kami
+                                        Our Products
                                     </h2>
 
                                     <p className="text-blue-100 mt-3 max-w-xl">
-                                        Berbagai jenis produk berkualitas yang
-                                        kami produksi
+                                        Various types of high-quality products
+                                        that we produce
                                     </p>
                                 </div>
 
                                 <a
-                                    href="/produk"
+                                    href="/products"
                                     className="hidden md:inline-flex bg-[#F8AD44] hover:bg-[#e09a35] text-black font-semibold px-6 py-3 rounded-xl transition shadow-lg"
                                 >
-                                    Lihat semua produk
+                                    View all products
                                 </a>
                             </div>
 
@@ -863,7 +863,9 @@ const Dashboard = () => {
                                     {productsData.slice(0, 4).map((product) => (
                                         <div
                                             key={product.id}
-                                            onClick={() => navigate("/produk")}
+                                            onClick={() =>
+                                                navigate("/products")
+                                            }
                                             className="
                             group
                             bg-white
@@ -895,7 +897,7 @@ const Dashboard = () => {
                                                 </h3>
 
                                                 <p className="text-xs text-[#000080] font-semibold mt-2 group-hover:tracking-wide transition-all">
-                                                    Klik untuk lihat detail →
+                                                    click to see details →
                                                 </p>
                                             </div>
                                         </div>
@@ -903,7 +905,7 @@ const Dashboard = () => {
                                 </div>
                             ) : (
                                 <div className="text-center text-white py-16 bg-white/10 rounded-2xl border border-white/10">
-                                    Belum ada produk tersedia
+                                    There are no products available yet.
                                 </div>
                             )}
                         </div>
@@ -926,12 +928,12 @@ const Dashboard = () => {
                                 <h2
                                     className={`${sectionHeadingClass} text-white leading-tight`}
                                 >
-                                    Apa Kata Mereka?
+                                    What Do They Say?
                                 </h2>
 
                                 <p className="mt-5 max-w-2xl mx-auto text-blue-100 text-base lg:text-lg leading-relaxed">
-                                    Pendapat dan pengalaman pelanggan kami
-                                    setelah menggunakan layanan perusahaan.
+                                    Perspectives and experiences of our
+                                    customers after using our services.
                                 </p>
                             </div>
 
@@ -960,8 +962,8 @@ const Dashboard = () => {
                                 ) : errorTestimonials ? (
                                     <div className="col-span-full text-center">
                                         <div className="inline-flex rounded-2xl border border-red-300/20 bg-red-400/10 px-6 py-4 text-sm text-red-100 backdrop-blur-md">
-                                            Gagal memuat testimoni. Silakan muat
-                                            ulang halaman.
+                                            Failed to load testimonials. Please
+                                            reload the page.
                                         </div>
                                     </div>
                                 ) : testimonialsData &&
@@ -1045,7 +1047,7 @@ const Dashboard = () => {
                                 ) : (
                                     <div className="col-span-full text-center">
                                         <div className="inline-flex rounded-2xl border border-white/10 bg-white/10 px-6 py-4 text-sm text-blue-100 backdrop-blur-md">
-                                            Belum ada testimoni tersedia.
+                                            No testimonials available yet.
                                         </div>
                                     </div>
                                 )}
@@ -1072,9 +1074,9 @@ const Dashboard = () => {
                                 </h2>
 
                                 <p className="mt-4 max-w-2xl mx-auto text-slate-600 text-base sm:text-lg leading-relaxed">
-                                    Temukan jawaban atas pertanyaan yang paling
-                                    sering ditanyakan mengenai layanan dan
-                                    informasi perusahaan kami.
+                                    Find answers to the most frequently asked
+                                    questions about our services and company
+                                    information.
                                 </p>
                             </div>
 
@@ -1090,8 +1092,8 @@ const Dashboard = () => {
                                     ) : errorFaqs ? (
                                         <div className="rounded-2xl border border-red-100 bg-red-50 px-6 py-5 text-center">
                                             <p className="text-sm text-red-600">
-                                                Gagal memuat FAQ. Silakan muat
-                                                ulang halaman.
+                                                Failed to load FAQ. Please
+                                                reload the page.
                                             </p>
                                         </div>
                                     ) : faqData && faqData.length > 0 ? (
@@ -1099,7 +1101,7 @@ const Dashboard = () => {
                                     ) : (
                                         <div className="rounded-2xl border border-dashed border-[#000080]/20 bg-[#000080]/5 px-6 py-10 text-center">
                                             <p className="text-sm text-slate-500">
-                                                Belum ada FAQ tersedia.
+                                                No FAQ available yet.
                                             </p>
                                         </div>
                                     )}

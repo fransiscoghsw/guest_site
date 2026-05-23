@@ -18,7 +18,7 @@ const Kontak = () => {
     });
 
     return (
-        <GuestLayouts pageTitle={t("Kontak")}>
+        <GuestLayouts pageTitle={t("Contact")}>
             {/* HERO */}
             <section className="relative overflow-hidden bg-gradient-to-r from-[#000080] via-[#1f3e8f] to-[#000080] py-20">
                 <div className="absolute -top-20 -left-20 w-72 h-72 bg-cyan-400/20 blur-3xl rounded-full" />
@@ -30,12 +30,12 @@ const Kontak = () => {
                     </span>
 
                     <h1 className="mt-6 text-4xl sm:text-5xl font-bold text-white">
-                        {t("Kontak")}
+                        {t("Contact")}
                     </h1>
 
                     <p className="mt-4 text-white/80 max-w-2xl mx-auto">
-                        Hubungi kami untuk informasi produk, kerja sama, atau
-                        kebutuhan lainnya
+                        Contact us for product information, partnership
+                        opportunities, or other needs
                     </p>
                 </div>
             </section>
@@ -50,7 +50,7 @@ const Kontak = () => {
                                 <div className="h-[420px] bg-slate-100 animate-pulse" />
                             ) : isError ? (
                                 <div className="h-[420px] flex items-center justify-center text-gray-500">
-                                    Gagal memuat peta
+                                    Failed to load map
                                 </div>
                             ) : contactData?.url_map ? (
                                 String(contactData.url_map).includes(
@@ -75,7 +75,7 @@ const Kontak = () => {
                                 )
                             ) : (
                                 <div className="h-[420px] flex items-center justify-center text-gray-500">
-                                    Peta tidak tersedia
+                                    Map not available
                                 </div>
                             )}
                         </div>
@@ -87,7 +87,7 @@ const Kontak = () => {
                                 <div className="flex items-center gap-3 mb-3">
                                     <div className="w-2 h-6 bg-[#000080] rounded-full" />
                                     <h3 className="font-bold text-lg text-slate-900">
-                                        Alamat
+                                        Address
                                     </h3>
                                 </div>
                                 <p className="text-slate-600 leading-relaxed">
@@ -113,7 +113,7 @@ const Kontak = () => {
                                 <div className="flex items-center gap-3 mb-3">
                                     <div className="w-2 h-6 bg-[#000080] rounded-full" />
                                     <h3 className="font-bold text-lg text-slate-900">
-                                        Telepon
+                                        Phone
                                     </h3>
                                 </div>
                                 <p className="text-slate-600">

@@ -1,18 +1,18 @@
 export const guestMenus = [
     {
         link: "/",
-        label: "Beranda",
+        label: "Home",
     },
     {
-        link: "/produk",
-        label: "Produk",
+        link: "/products",
+        label: "Products",
     },
     {
-        link: "/profil",
-        label: "Profil",
+        link: "/about",
+        label: "About Us",
     },
     {
-        link: "/kontak",
-        label: "Kontak",
+        link: "/contact",
+        label: "Contact Us",
     },
 ];

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 // ─── Modal Detail ─────────────────────────────────────────────────────────────
 const ProductModal = ({ product, onClose }) => {
-    const whatsappNumber = "6281110101227";
+    const whatsappNumber = "6282194944632";
     const whatsappMessage = encodeURIComponent(
         `Halo, saya ingin bertanya produk ${product.name}`,
     );
@@ -106,7 +106,7 @@ const ProductCardItem = ({ product }) => {
 
                     <div className="mt-auto flex items-center justify-between">
                         <span className="text-xs font-semibold text-[#000080] group-hover:tracking-wide transition-all">
-                            Lihat detail
+                            See details
                         </span>
 
                         <span className="text-[#000080] group-hover:translate-x-1 transition-transform">

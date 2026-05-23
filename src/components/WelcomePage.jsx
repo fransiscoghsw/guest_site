@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import quailEgg from "../assets/images/logo.png";
+import logo from "../assets/images/logo.png";
 
 // Semua gambar yang perlu di-preload sebelum halaman bisa di-scroll
-const IMAGES_TO_PRELOAD = [quailEgg];
+const IMAGES_TO_PRELOAD = [logo];
 
 const WelcomePage = ({ onClose }) => {
     const [progress, setProgress] = useState(0);
@@ -60,10 +60,10 @@ const WelcomePage = ({ onClose }) => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                {/* Gambar telur puyuh — animasi asli tetap */}
+                {/* Gambar logo — animasi asli tetap */}
                 <motion.img
-                    src={quailEgg}
-                    alt="Telur Puyuh"
+                    src={logo}
+                    alt="Logo"
                     className="w-32 h-32"
                     initial={{ y: -100, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}

@@ -71,9 +71,12 @@ const MenuItem = ({ link, label, subMenu }) => {
         <li>
             <NavLink
                 to={link}
+                end={link === "/"}
                 className={({ isActive }) =>
-                    `flex items-center px-4 py-2 rounded-md transition-colors duration-200 text-white font-medium hover:text-[#F8AD44] ${
-                        isActive ? "font-semibold text-[#F8AD44]" : ""
+                    `flex items-center px-4 py-2 rounded-md transition-colors duration-200 font-medium ${
+                        isActive
+                            ? "text-[#F8AD44] font-semibold"
+                            : "text-white hover:text-[#F8AD44]"
                     }`
                 }
             >

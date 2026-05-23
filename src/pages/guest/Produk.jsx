@@ -29,18 +29,18 @@ const Produk = () => {
                 <div className="relative max-w-6xl mx-auto text-center">
                     {/* badge */}
                     <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white text-xs font-semibold tracking-[0.3em] uppercase">
-                        Katalog Produk
+                        Product Catalog
                     </div>
 
                     {/* title */}
                     <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight">
-                        Produk Kami
+                        Our Products
                     </h1>
 
                     {/* subtitle */}
                     <p className="mt-5 text-white/80 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-                        Temukan berbagai produk berkualitas dengan standar
-                        terbaik untuk kebutuhan Anda
+                        Find a variety of high-quality products with modern and
+                        hygienic standards for your needs
                     </p>
 
                     {/* divider accent */}
@@ -53,11 +53,12 @@ const Produk = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
                 {error ? (
                     <div className="rounded-2xl border border-red-200 bg-red-50 p-6 text-center text-red-700">
-                        Terjadi kesalahan saat memuat produk. Silakan coba lagi.
+                        An error occurred while loading products. Please try
+                        again.
                     </div>
                 ) : !Array.isArray(products) || products.length === 0 ? (
                     <div className="rounded-2xl border border-gray-200 bg-gray-50 p-6 text-center text-gray-700">
-                        Produk tidak tersedia saat ini.
+                        No products available at the moment.
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">

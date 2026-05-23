@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logo from "../../assets/images/logo.png";
 import { getSocialMedia } from "../../services/social-media.service";
 
 const footerMenus = [
-    { label: "Beranda", link: "/" },
-    { label: "Produk", link: "/produk" },
-    { label: "Profil", link: "/profil" },
-    { label: "Kontak", link: "/kontak" },
+    { label: "Home", link: "/" },
+    { label: "Products", link: "/products" },
+    { label: "About Us", link: "/about" },
+    { label: "Contact", link: "/contact" },
 ];
 
 // ICONS tetap kamu pakai (tidak diubah)
@@ -71,9 +71,9 @@ const Footer = () => {
                         </div>
 
                         <p className="text-sm text-white/70 leading-relaxed max-w-sm">
-                            PT KEMBAR MEDIKA SAFETY — perusahaan yang bergerak
-                            di bidang produk berkualitas dengan standar modern
-                            dan higienis.
+                            PT KEMBAR MEDIKA SAFETY — a company specializing in
+                            high-quality products with modern and hygienic
+                            standards.
                         </p>
 
                         <div className="space-y-3 text-white/70 text-sm">
@@ -101,17 +101,24 @@ const Footer = () => {
                     <div className="md:flex md:justify-center">
                         <div className="space-y-3">
                             <h4 className="text-sm font-semibold text-white/90 mb-2">
-                                Navigasi
+                                Menus
                             </h4>
 
                             {footerMenus.map((menu, idx) => (
-                                <Link
+                                <NavLink
                                     key={idx}
                                     to={menu.link}
-                                    className="block text-sm text-white/70 hover:text-[#F8AD44] transition"
+                                    end={menu.link === "/"}
+                                    className={({ isActive }) =>
+                                        `block text-sm transition ${
+                                            isActive
+                                                ? "text-[#F8AD44] font-semibold"
+                                                : "text-white/70 hover:text-[#F8AD44]"
+                                        }`
+                                    }
                                 >
                                     {menu.label}
-                                </Link>
+                                </NavLink>
                             ))}
                         </div>
                     </div>
@@ -119,7 +126,7 @@ const Footer = () => {
                     {/* RIGHT */}
                     <div className="md:text-right space-y-4">
                         <h4 className="text-sm font-semibold text-white/90">
-                            Hubungi Kami
+                            Contact Us
                         </h4>
 
                         <a
