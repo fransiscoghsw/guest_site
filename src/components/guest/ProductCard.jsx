@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 // ─── Modal Detail ─────────────────────────────────────────────────────────────
 const ProductModal = ({ product, onClose }) => {
-    const whatsappNumber = "6282194944632";
+    const whatsappNumber = "08111616635";
     const whatsappMessage = encodeURIComponent(
         `Halo, saya ingin bertanya produk ${product.name}`,
     );
