@@ -6,6 +6,7 @@ import LoadingPage from "../../components/LoadingPage";
 import WelcomePage from "../../components/WelcomePage";
 import ErrorPage from "../ErrorPage";
 import { getDashboardFrontpage } from "../../services/dashboard-frontpage.service";
+import { getDocumentation } from "../../services/documentation.service";
 import { getAllProduct } from "../../services/product.service";
 import { getNilaiPerusahaan } from "../../services/nilaiperusahaan.service";
 import { getFaqs } from "../../services/faq.service";
@@ -57,7 +58,6 @@ const Dashboard = () => {
         queryFn: () => getDashboardFrontpage(),
         staleTime: 1000 * 60 * 5,
     });
-
     const {
         data: productsData,
         isLoading: loadingProducts,
@@ -95,6 +95,22 @@ const Dashboard = () => {
         refetchOnWindowFocus: false,
     });
 
+    const {
+        data: documentationData = [],
+        isLoading: loadingDocumentation,
+        error: errorDocumentation,
+    } = useQuery({
+        queryKey: ["documentation"],
+        queryFn: () =>
+            new Promise((resolve, reject) => {
+                getDocumentation((data) => {
+                    resolve(Array.isArray(data) ? data : []);
+                });
+            }),
+        staleTime: 1000 * 60 * 5,
+        refetchOnWindowFocus: false,
+    });
+
     // Tidak ada pemrosesan artikel di dashboard saat ini
 
     // --- Styling helpers for consistent, modern look ---
@@ -111,7 +127,7 @@ const Dashboard = () => {
         const [modalStep, setModalStep] = useState("options"); // 'options' or 'template'
 
         // --- Detail WhatsApp ---
-        const waNumber = "6282194944632";
+        const waNumber = "628111616635";
         const waTemplateMessage =
             "Halo, saya tertarik dengan produk Medika Safety. Bisa tolong berikan informasi lebih lanjut?";
         const encodedMessage = encodeURIComponent(waTemplateMessage);
@@ -627,6 +643,153 @@ const Dashboard = () => {
                             <FloatingContactSales />
                         </section>
                     </div>
+
+                    {/* Event Section */}
+                    <section className="relative w-full overflow-hidden bg-gradient-to-b from-white to-[#f5f7ff] py-24">
+                        {/* Background Blur */}
+                        <div className="absolute top-0 left-0 w-72 h-72 bg-[#d67026]/10 rounded-full blur-3xl" />
+                        <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#000080]/10 rounded-full blur-3xl" />
+
+                        <div className="relative z-10 w-[90%] max-w-7xl mx-auto">
+                            {/* Header */}
+                            <div className="text-center mb-16">
+                                <span className="inline-flex items-center rounded-full bg-[#d67026]/10 border border-[#d67026]/20 px-5 py-2 text-sm font-semibold text-[#d67026] mb-5">
+                                    Events & News
+                                </span>
+
+                                <h2 className="font-bold text-3xl lg:text-5xl tracking-tight text-slate-900 leading-tight">
+                                    Latest Events
+                                </h2>
+
+                                <p className="mt-5 max-w-2xl mx-auto text-slate-600 text-base lg:text-lg leading-relaxed">
+                                    Stay updated with our latest events and
+                                    announcements
+                                </p>
+                            </div>
+
+                            {/* Events Grid */}
+                            {loadingDocumentation ? (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {Array.from({ length: 3 }).map((_, idx) => (
+                                        <div
+                                            key={idx}
+                                            className="rounded-2xl bg-white p-6 shadow-lg border border-gray-100 animate-pulse"
+                                        >
+                                            <div className="h-48 bg-gray-200 rounded-lg mb-4" />
+                                            <div className="h-6 bg-gray-200 rounded mb-3" />
+                                            <div className="h-4 bg-gray-200 rounded mb-2 w-5/6" />
+                                            <div className="h-4 bg-gray-200 rounded w-4/6" />
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : errorDocumentation ? (
+                                <div className="text-center py-16 rounded-2xl border border-red-200 bg-red-50">
+                                    <p className="text-sm text-red-600">
+                                        Failed to load events. Please reload the
+                                        page.
+                                    </p>
+                                </div>
+                            ) : documentationData &&
+                              documentationData.length > 0 ? (
+                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {documentationData.map((event, idx) => {
+                                        const imageSrc =
+                                            event.image ||
+                                            event.gambar ||
+                                            event.img;
+                                        const imageUrl = imageSrc
+                                            ? typeof imageSrc === "string"
+                                                ? imageSrc.startsWith("http")
+                                                    ? imageSrc
+                                                    : `${import.meta.env.VITE_API_URL}/dokumentasi-frontpage/image/${imageSrc}`
+                                                : null
+                                            : null;
+
+                                        return (
+                                            <motion.div
+                                                key={idx}
+                                                initial={{ opacity: 0, y: 40 }}
+                                                whileInView={{
+                                                    opacity: 1,
+                                                    y: 0,
+                                                }}
+                                                viewport={{ once: true }}
+                                                transition={{
+                                                    duration: 0.6,
+                                                    delay: idx * 0.12,
+                                                }}
+                                                whileHover={{
+                                                    y: -8,
+                                                    scale: 1.02,
+                                                }}
+                                                className="group relative overflow-hidden rounded-2xl bg-white shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                                            >
+                                                {/* Image Container */}
+                                                {imageUrl && (
+                                                    <div className="h-48 bg-gray-100 overflow-hidden flex items-center justify-center">
+                                                        <img
+                                                            src={imageUrl}
+                                                            alt={
+                                                                event.title ||
+                                                                event.judul ||
+                                                                event.nama ||
+                                                                "Event"
+                                                            }
+                                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                                                        />
+                                                    </div>
+                                                )}
+
+                                                {/* Content */}
+                                                <div className="p-6">
+                                                    <h3 className="font-bold text-lg text-slate-900 mb-3 line-clamp-2 group-hover:text-[#d67026] transition-colors">
+                                                        {event.title ||
+                                                            event.judul ||
+                                                            event.nama ||
+                                                            "Event"}
+                                                    </h3>
+
+                                                    {/* <p className="text-sm text-slate-600 line-clamp-3 leading-relaxed">
+                                                        {event.description ||
+                                                            event.deskripsi ||
+                                                            event.desc ||
+                                                            "No description available"}
+                                                    </p> */}
+
+                                                    {event.date && (
+                                                        <div className="mt-4 flex items-center gap-2 text-xs text-[#d67026] font-medium">
+                                                            <svg
+                                                                className="w-4 h-4"
+                                                                fill="none"
+                                                                stroke="currentColor"
+                                                                viewBox="0 0 24 24"
+                                                            >
+                                                                <path
+                                                                    strokeLinecap="round"
+                                                                    strokeLinejoin="round"
+                                                                    strokeWidth={
+                                                                        2
+                                                                    }
+                                                                    d="M8 7V3m8 4V3m-9 8h18M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                                                                />
+                                                            </svg>
+                                                            {event.date}
+                                                        </div>
+                                                    )}
+                                                </div>
+                                            </motion.div>
+                                        );
+                                    })}
+                                </div>
+                            ) : (
+                                <div className="text-center py-16 rounded-2xl border border-dashed border-[#d67026]/20 bg-[#d67026]/5">
+                                    <p className="text-sm text-slate-500">
+                                        No events available yet.
+                                    </p>
+                                </div>
+                            )}
+                        </div>
+                    </section>
 
                     <section className="relative w-full overflow-hidden bg-gradient-to-b from-white via-[#f5f7ff] to-[#eef2ff] py-24">
                         {/* Background Blur */}
